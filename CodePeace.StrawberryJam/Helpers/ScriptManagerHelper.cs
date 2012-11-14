@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using Microsoft.Practices.ServiceLocation;
 
 namespace CodePeace.StrawberryJam.Helpers
 {
@@ -52,7 +54,7 @@ namespace CodePeace.StrawberryJam.Helpers
         {
             const ScriptType type = ScriptType.JavaScript;
 
-            bool concatenate = bool.Parse(ConfigurationManager.AppSettings["ScriptManager.Concatenate"]);
+            bool concatenate = bool.Parse(ConfigurationManager.AppSettings["SJ.Concatenate"]);
 
             if (concatenate)
             {
@@ -96,7 +98,7 @@ namespace CodePeace.StrawberryJam.Helpers
         {
             var type = ScriptType.Stylesheet;
 
-            bool concatenate = bool.Parse(ConfigurationManager.AppSettings["ScriptManager.Concatenate"]);
+            bool concatenate = bool.Parse(ConfigurationManager.AppSettings["SJ.Concatenate"]);
 
             if (concatenate)
             {

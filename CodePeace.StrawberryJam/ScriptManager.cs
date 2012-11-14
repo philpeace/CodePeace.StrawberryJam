@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using CodePeace.Common;
+using CodePeace.Common.Extensions;
 
 namespace CodePeace.StrawberryJam
 {
@@ -83,7 +86,7 @@ namespace CodePeace.StrawberryJam
             //add sitewide scripts FIRST, so they're accessible to local scripts
             var siteScripts = scripts.OrderBy(s => s.SiteWide);
             var scriptsToRender = siteScripts;
-            var minify = bool.Parse(ConfigurationManager.AppSettings["ScriptManager.Compress"]);
+            var minify = bool.Parse(ConfigurationManager.AppSettings["SJ.Compress"]);
 
             foreach (var script in scriptsToRender)
             {

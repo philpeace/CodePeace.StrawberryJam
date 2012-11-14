@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePeace.StrawberryJam", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePeace.StrawberryJam.Tests", "CodePeace.StrawberryJam.Tests\CodePeace.StrawberryJam.Tests.csproj", "{128E33F2-96B2-4B6E-B532-8556E3DADE53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePeace.Common", "CodePeace.Common\CodePeace.Common.csproj", "{77B66EED-5100-442B-8431-E40A726ACC5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B66EED-5100-442B-8431-E40A726ACC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B66EED-5100-442B-8431-E40A726ACC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B66EED-5100-442B-8431-E40A726ACC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B66EED-5100-442B-8431-E40A726ACC5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
