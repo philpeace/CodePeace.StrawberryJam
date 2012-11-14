@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePeace.StrawberryJam.Demo", "CodePeace.StrawberryJam.Demo\CodePeace.StrawberryJam.Demo.csproj", "{7B8DC04C-132B-4396-80B0-6AFC28CFF8D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePeace.StrawberryJam", "CodePeace.StrawberryJam\CodePeace.StrawberryJam.csproj", "{18D52B62-88F4-4619-8810-6855FDA1C534}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePeace.StrawberryJam.Tests", "CodePeace.StrawberryJam.Tests\CodePeace.StrawberryJam.Tests.csproj", "{128E33F2-96B2-4B6E-B532-8556E3DADE53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{7B8DC04C-132B-4396-80B0-6AFC28CFF8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B8DC04C-132B-4396-80B0-6AFC28CFF8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B8DC04C-132B-4396-80B0-6AFC28CFF8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D52B62-88F4-4619-8810-6855FDA1C534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D52B62-88F4-4619-8810-6855FDA1C534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D52B62-88F4-4619-8810-6855FDA1C534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D52B62-88F4-4619-8810-6855FDA1C534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128E33F2-96B2-4B6E-B532-8556E3DADE53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
