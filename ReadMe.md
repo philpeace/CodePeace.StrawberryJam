@@ -25,5 +25,34 @@ To write the bundle to the page:
 
     <!-- This will output the stylesheet bundle called 'head' to the page -->
     @Html.WriteStyles("head")
+	
+###JavaScript
 
+To add a .js file to a bundle is pretty much the same as a .css file:
 
+    <!-- This will add the jquery library .cjs file to a JavaScript bundle called 'head' -->
+    @Html.AddJavaScript(Url.Content("~/scripts/jquery-1.7.1.js"), "head")
+	
+To add inline JavaScript to a page:
+
+    <!--
+	We use templated Razor views to allow is to write inline script.
+    In this case we are adding the inline script to the 'head' bundle like before
+	-->
+    @Html.AddScriptSource(@<text>
+		alert('ALL YOUR INLINE SCRIPTS ARE BELONG TO US');
+	</text>, "test", area: "head")
+	
+To write the bundle to the page:
+
+    <!-- This will output the JavaScript bundle called 'head' to the page -->
+    @Html.WriteScripts("head")
+	
+###Settings
+
+By default nothing is minified or bundled, we write conventional `<script>` and `<link>` elements to the page. To actually bundle and minify the output you need to set 2 appsettings in the `web.config`:
+
+    <appSettings>
+	    <add key="SJ.Concatenate" value="true" />
+        <add key="SJ.Compress" value="true" />
+    </appSettings>
