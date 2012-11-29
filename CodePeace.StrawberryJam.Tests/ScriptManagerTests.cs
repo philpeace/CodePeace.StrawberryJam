@@ -1,10 +1,7 @@
 ﻿using System.Web;
-using DrFoster.Common.Web.MVC;
-using DrFoster.Common.Web.Minification;
-using DrFoster.Common.Web.Tests.MVC;
+using CodePeace.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using DrFoster.Common.Caching;
 using System.Collections.Generic;
 using Moq;
 

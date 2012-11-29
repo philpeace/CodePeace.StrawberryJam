@@ -83,7 +83,6 @@ namespace CodePeace.StrawberryJam
             var scriptbody = new StringBuilder();
             scriptbody.AppendFormat("/* Generated: {0} */\n", DateTime.Now.ToString());
 
-            //add sitewide scripts FIRST, so they're accessible to local scripts
             var siteScripts = scripts.OrderBy(s => s.SiteWide);
             var scriptsToRender = siteScripts;
             var minify = bool.Parse(ConfigurationManager.AppSettings["SJ.Compress"]);
@@ -180,5 +179,10 @@ namespace CodePeace.StrawberryJam
                 _context.Application[key] = new ScriptFileList();
             }
         }
+    }
+
+    public interface ICacheManager
+    {
+        string Get(string appKey, Func<object, string> func);
     }
 }

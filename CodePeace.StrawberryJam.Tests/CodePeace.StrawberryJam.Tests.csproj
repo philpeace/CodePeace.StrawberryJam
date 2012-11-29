@@ -35,10 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -62,10 +66,17 @@
     <Compile Include="ScriptOutputTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodePeace.Common\CodePeace.Common.csproj">
+      <Project>{77b66eed-5100-442b-8431-e40a726acc5e}</Project>
+      <Name>CodePeace.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodePeace.StrawberryJam\CodePeace.StrawberryJam.csproj">
       <Project>{18d52b62-88f4-4619-8810-6855fda1c534}</Project>
       <Name>CodePeace.StrawberryJam</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
