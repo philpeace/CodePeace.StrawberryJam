@@ -56,3 +56,5 @@ By default nothing is minified or bundled, we write conventional `<script>` and 
 	    <add key="SJ.Concatenate" value="true" />
         <add key="SJ.Compress" value="true" />
     </appSettings>
+
+The settings are pretty self explanatory, you can choose to just bundle everything up (`SJ.Concatenate = true`) or bundle *AND* minify (`SJ.Compress = true && SJ.Concatenate = true`)
