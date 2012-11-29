@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace CodePeace.StrawberryJam
+namespace CodePeace.StrawberryJam.Demo.App_Start
 {
     public class FilterConfig
     {

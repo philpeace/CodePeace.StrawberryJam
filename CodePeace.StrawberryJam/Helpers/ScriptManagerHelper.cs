@@ -17,7 +17,7 @@ namespace CodePeace.StrawberryJam.Helpers
 
             var info = new ScriptInfo(localPath, helper.ViewContext.HttpContext.Server.MapPath(localPath).Replace(@"/", @"\"), cdnPath, scriptType, siteWide, area);
 
-            var manager = ServiceLocator.Current.GetInstance<IScriptManager>();
+            var manager = new ScriptManager();
 
             manager.Add(info);
 
@@ -30,7 +30,7 @@ namespace CodePeace.StrawberryJam.Helpers
 
             var info = new ScriptInfo(localPath, helper.ViewContext.HttpContext.Server.MapPath(localPath).Replace(@"/", @"\"), cdnPath, scriptType, siteWide, area);
 
-            var manager = ServiceLocator.Current.GetInstance<IScriptManager>();
+            var manager = new ScriptManager();
 
             manager.Add(info);
 
@@ -43,7 +43,7 @@ namespace CodePeace.StrawberryJam.Helpers
 
             var info = new ScriptInfo(source(null).ToHtmlString(), cdnPath, scriptType, key, siteWide, area);
 
-            var manager = ServiceLocator.Current.GetInstance<IScriptManager>();
+            var manager = new ScriptManager();
 
             manager.Add(info);
 
@@ -69,7 +69,7 @@ namespace CodePeace.StrawberryJam.Helpers
             }
             else
             {
-                var manager = ServiceLocator.Current.GetInstance<IScriptManager>();
+                var manager = new ScriptManager();
 
                 string output = "";
 
@@ -114,7 +114,7 @@ namespace CodePeace.StrawberryJam.Helpers
             }
             else
             {
-                var manager = ServiceLocator.Current.GetInstance<IScriptManager>();
+                var manager = new ScriptManager();
 
                 string output = "";
 

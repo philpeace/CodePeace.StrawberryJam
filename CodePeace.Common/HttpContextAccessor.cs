@@ -8,14 +8,19 @@ namespace CodePeace.Common
         public HttpContextBase Current()
         {
             var httpContext = GetStaticProperty();
+
             if (httpContext == null)
+            {
                 return null;
+            }
+
             return new HttpContextWrapper(httpContext);
         }
 
         private HttpContext GetStaticProperty()
         {
             var httpContext = HttpContext.Current;
+
             if (httpContext == null)
             {
                 return null;
@@ -32,6 +37,7 @@ namespace CodePeace.Common
             {
                 return null;
             }
+
             return httpContext;
         }
     }

@@ -12,14 +12,20 @@ namespace CodePeace.StrawberryJam
 {
     public class ScriptManager : IScriptManager
     {
+        public ScriptManager()
+            : this(new CacheManager(), new HttpContextAccessor())
+        {
+            
+        }
+
         public ScriptManager(ICacheManager cacheManager, IHttpContextAccessor contextAccessor)
         {
             _cacheManager = cacheManager;
             _context = contextAccessor.Current();
         }
 
-        private ICacheManager _cacheManager;
-        private HttpContextBase _context;
+        private readonly ICacheManager _cacheManager;
+        private readonly HttpContextBase _context;
 
         public IScriptFileList ListForType(ScriptType type)
         {
@@ -64,15 +70,17 @@ namespace CodePeace.StrawberryJam
 
             IEnumerable<IScriptInfo> scripts = list.ScriptsForArea(info.Area);
 
-            string hash = GetHash(scripts);
-            string appKey = CreateKey(info.Type) + hash;
-            output.FromCache = true;
-            output.LastModified = scripts.Any() ? scripts.Max(s => s.LastModified) : DateTime.MinValue;
+            var scriptInfos = scripts as IScriptInfo[] ?? scripts.ToArray();
+            var hash = GetHash(scriptInfos);
+            var appKey = CreateKey(info.Type) + hash;
 
-            output.Output = _cacheManager.Get(appKey, c =>
+            output.FromCache = true;
+            output.LastModified = scriptInfos.Any() ? scriptInfos.Max(s => s.LastModified) : DateTime.MinValue;
+
+            output.Output = _cacheManager.Get(appKey, () =>
             {
                 output.FromCache = false;
-                return Merge(info, scripts);
+                return Merge(info, scriptInfos);
             });
 
             return output;
@@ -91,7 +99,7 @@ namespace CodePeace.StrawberryJam
             {
                 if (!script.IsInline && !string.IsNullOrWhiteSpace(script.LocalPath))
                 {
-                    using (FileStream fs = new FileStream(script.LocalPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var fs = new FileStream(script.LocalPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
                         using (var file = new StreamReader(fs))
                         {
@@ -179,10 +187,5 @@ namespace CodePeace.StrawberryJam
                 _context.Application[key] = new ScriptFileList();
             }
         }
-    }
-
-    public interface ICacheManager
-    {
-        string Get(string appKey, Func<object, string> func);
     }
 }

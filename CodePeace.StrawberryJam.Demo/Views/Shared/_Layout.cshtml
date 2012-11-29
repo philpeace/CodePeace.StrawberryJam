@@ -1,20 +1,23 @@
-﻿<!DOCTYPE html>
+﻿@using CodePeace.StrawberryJam.Helpers
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @*   
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    *@
+    @Html.AddCss(Url.Content("~/Content/Site.css"), "head", siteWide: true)
+    @Html.AddJavaScript(Url.Content("~/scripts/jquery-1.7.1.js"), "head", siteWide: true)
+    @Html.AddJavaScript(Url.Content("~/scripts/jquery.validate.js"), "foot", siteWide: true)
+    @Html.AddScriptSource(@<text>$(document).ready(function() { $('h1').text('The current controller is @ViewContext.RouteData.Values["controller"].ToString()'); });</text>, "test", area: "foot", siteWide: false)
+    
+    @Html.WriteStyles("head")
+    @Html.WriteScripts("head")
 </head>
 <body>
     @RenderBody()
 
-    @*    
-    @Scripts.Render("~/bundles/jquery")
-    *@
     @RenderSection("scripts", required: false)
+    @Html.WriteScripts("foot")
 </body>
 </html>

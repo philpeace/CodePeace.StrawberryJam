@@ -55,7 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaRegistration.cs" />
+    <Compile Include="Attributes\EnableCompressionAttribute.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="Controllers\ScriptManagerController.cs" />
     <Compile Include="Helpers\ScriptManagerHelper.cs" />
+    <Compile Include="ICacheManager.cs" />
     <Compile Include="IScriptFileList.cs" />
     <Compile Include="IScriptGenerationInfo.cs" />
     <Compile Include="IScriptInfo.cs" />
