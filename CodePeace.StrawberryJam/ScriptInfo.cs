@@ -6,13 +6,11 @@ namespace CodePeace.StrawberryJam
 {
     public class ScriptInfo : IScriptInfo
     {
-        public ScriptInfo(string url, string localPath, string cdnPath, ScriptType scriptType, bool siteWide = false, string area = null)
+        public ScriptInfo(string url, string localPath, ScriptType scriptType, string area = null)
         {
             Url = url;
             LocalPath = localPath;
-            CDNPath = cdnPath;
             ScriptType = scriptType;
-            SiteWide = siteWide;
             Area = area;
 
             UniqueKey = localPath;
@@ -23,13 +21,11 @@ namespace CodePeace.StrawberryJam
             }
         }
 
-        public ScriptInfo(string source, string cdnPath, ScriptType scriptType, string key, bool siteWide = false, string area = null)
+        public ScriptInfo(string source, ScriptType scriptType, string key, string area = null)
         {
             IsInline = true;
             Source = source;
-            CDNPath = cdnPath;
             ScriptType = scriptType;
-            SiteWide = siteWide;
             Area = area;
             LastModified = DateTime.Today;
 
@@ -98,19 +94,7 @@ namespace CodePeace.StrawberryJam
             set;
         }
 
-        public string CDNPath
-        {
-            get;
-            set;
-        }
-
         public ScriptType ScriptType
-        {
-            get;
-            set;
-        }
-
-        public bool SiteWide
         {
             get;
             set;

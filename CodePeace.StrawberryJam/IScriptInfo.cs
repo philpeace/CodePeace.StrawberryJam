@@ -46,19 +46,7 @@ namespace CodePeace.StrawberryJam
             set;
         }
 
-        string CDNPath
-        {
-            get;
-            set;
-        }
-
         ScriptType ScriptType
-        {
-            get;
-            set;
-        }
-
-        bool SiteWide
         {
             get;
             set;

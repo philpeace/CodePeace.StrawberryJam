@@ -91,8 +91,7 @@ namespace CodePeace.StrawberryJam
             var scriptbody = new StringBuilder();
             scriptbody.AppendFormat("/* Generated: {0} */\n", DateTime.Now.ToString());
 
-            var siteScripts = scripts.OrderBy(s => s.SiteWide);
-            var scriptsToRender = siteScripts;
+            var scriptsToRender = scripts;
             var minify = bool.Parse(ConfigurationManager.AppSettings["SJ.Compress"]);
 
             foreach (var script in scriptsToRender)

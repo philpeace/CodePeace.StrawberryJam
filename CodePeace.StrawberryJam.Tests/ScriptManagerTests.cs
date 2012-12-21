@@ -49,7 +49,7 @@ namespace CodePeace.StrawberryJam.Tests
 
             var target = new ScriptManager(cacheManager.Object, contextAccessor.Object);
 
-            IScriptInfo info = new ScriptInfo(null, "SomeLocalPath", null, ScriptType.JavaScript);
+            IScriptInfo info = new ScriptInfo(null, "SomeLocalPath", ScriptType.JavaScript);
 
             target.Add(info);
 
@@ -73,7 +73,7 @@ namespace CodePeace.StrawberryJam.Tests
 
             var target = new ScriptManager(cacheManager.Object, contextAccessor.Object);
 
-            IScriptInfo info = new ScriptInfo(null, "SomeLocalPath", null, ScriptType.Stylesheet);
+            IScriptInfo info = new ScriptInfo(null, "SomeLocalPath", ScriptType.Stylesheet);
 
             target.Add(info);
 

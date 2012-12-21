@@ -29,7 +29,7 @@ namespace CodePeace.StrawberryJam.Tests
         public void ScriptFileList_Add_ScriptInfo_Increases_Collection_Count()
         {
             ScriptFileList target = new ScriptFileList();
-            ScriptInfo info = new ScriptInfo("", "", "", ScriptType.JavaScript);
+            ScriptInfo info = new ScriptInfo("", "", ScriptType.JavaScript);
             target.Add(info);
 
             int expected = 1;
@@ -41,7 +41,7 @@ namespace CodePeace.StrawberryJam.Tests
         public void ScriptFileList_Add_JavaScript_ScriptInfo_Is_Added_To_Collection()
         {
             ScriptFileList target = new ScriptFileList();
-            ScriptInfo info = new ScriptInfo("", "", "", ScriptType.JavaScript);
+            ScriptInfo info = new ScriptInfo("", "", ScriptType.JavaScript);
             target.Add(info);
 
             bool contains = target.Scripts.Contains(info);
@@ -53,7 +53,7 @@ namespace CodePeace.StrawberryJam.Tests
         public void ScriptFileList_Add_StyleSheet_ScriptInfo_Is_Added_To_Collection()
         {
             ScriptFileList target = new ScriptFileList();
-            ScriptInfo info = new ScriptInfo("", "", "", ScriptType.Stylesheet);
+            ScriptInfo info = new ScriptInfo("", "", ScriptType.Stylesheet);
             target.Add(info);
 
             bool contains = target.Scripts.Contains(info);

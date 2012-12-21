@@ -11,11 +11,11 @@ namespace CodePeace.StrawberryJam.Helpers
 {
     public static class ScriptManagerHelper
     {
-        public static MvcHtmlString AddCss(this HtmlHelper helper, string localPath, string area = null, string cdnPath = null, bool siteWide = false)
+        public static MvcHtmlString AddCss(this HtmlHelper helper, string localPath, string area = null)
         {
             var scriptType = ScriptType.Stylesheet;
 
-            var info = new ScriptInfo(localPath, helper.ViewContext.HttpContext.Server.MapPath(localPath).Replace(@"/", @"\"), cdnPath, scriptType, siteWide, area);
+            var info = new ScriptInfo(localPath, helper.ViewContext.HttpContext.Server.MapPath(localPath).Replace(@"/", @"\"), scriptType,  area);
 
             var manager = new ScriptManager();
 
@@ -24,11 +24,11 @@ namespace CodePeace.StrawberryJam.Helpers
             return MvcHtmlString.Empty;
         }
 
-        public static MvcHtmlString AddJavaScript(this HtmlHelper helper, string localPath, string area = null, string cdnPath = null, bool siteWide = false)
+        public static MvcHtmlString AddJavaScript(this HtmlHelper helper, string localPath, string area = null)
         {
             var scriptType = ScriptType.JavaScript;
 
-            var info = new ScriptInfo(localPath, helper.ViewContext.HttpContext.Server.MapPath(localPath).Replace(@"/", @"\"), cdnPath, scriptType, siteWide, area);
+            var info = new ScriptInfo(localPath, helper.ViewContext.HttpContext.Server.MapPath(localPath).Replace(@"/", @"\"), scriptType,  area);
 
             var manager = new ScriptManager();
 
@@ -37,11 +37,11 @@ namespace CodePeace.StrawberryJam.Helpers
             return MvcHtmlString.Empty;
         }
 
-        public static MvcHtmlString AddScriptSource(this HtmlHelper helper, Func<dynamic, HelperResult> source, string key, string area = null, string cdnPath = null, bool siteWide = false)
+        public static MvcHtmlString AddScriptSource(this HtmlHelper helper, Func<dynamic, HelperResult> source, string key, string area = null)
         {
             var scriptType = ScriptType.JavaScript;
 
-            var info = new ScriptInfo(source(null).ToHtmlString(), cdnPath, scriptType, key, siteWide, area);
+            var info = new ScriptInfo(source(null).ToHtmlString(), scriptType, key, area);
 
             var manager = new ScriptManager();
 
