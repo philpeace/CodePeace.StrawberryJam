@@ -27,7 +27,7 @@ namespace CodePeace.StrawberryJam
             Source = source;
             ScriptType = scriptType;
             Area = area;
-            LastModified = DateTime.Today;
+            LastModified = DateTime.Now;
 
             var hash = System.Security.Cryptography.MD5.Create().ComputeHash(Encoding.ASCII.GetBytes(Source));
             var sb = new StringBuilder();
