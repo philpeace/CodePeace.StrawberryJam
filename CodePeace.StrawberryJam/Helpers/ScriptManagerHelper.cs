@@ -54,7 +54,8 @@ namespace CodePeace.StrawberryJam.Helpers
         {
             const ScriptType type = ScriptType.JavaScript;
 
-            bool concatenate = bool.Parse(ConfigurationManager.AppSettings["SJ.Concatenate"]);
+            var catAppSetting = ConfigurationManager.AppSettings["SJ.Concatenate"];
+            bool concatenate = catAppSetting != null && bool.Parse(catAppSetting);
 
             if (concatenate)
             {
@@ -98,7 +99,8 @@ namespace CodePeace.StrawberryJam.Helpers
         {
             var type = ScriptType.Stylesheet;
 
-            bool concatenate = bool.Parse(ConfigurationManager.AppSettings["SJ.Concatenate"]);
+            var catAppSetting = ConfigurationManager.AppSettings["SJ.Concatenate"];
+            bool concatenate = catAppSetting != null && bool.Parse(catAppSetting);
 
             if (concatenate)
             {
@@ -142,5 +144,4 @@ namespace CodePeace.StrawberryJam.Helpers
             }
         }
     }
-
 }

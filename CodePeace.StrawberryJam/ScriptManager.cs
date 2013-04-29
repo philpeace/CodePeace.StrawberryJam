@@ -108,8 +108,10 @@ namespace CodePeace.StrawberryJam
                             {
                                 var fromUri = new Uri(HttpContext.Current.Server.MapPath("~/"));
                                 var toUri = new Uri(new FileInfo(script.LocalPath).DirectoryName);
-                                string imageUrlRoot = HttpContext.Current.Request.ApplicationPath + "/" + fromUri.MakeRelativeUri(toUri).ToString();
-                                fileContent = fileContent.Replace("url(images", "url(" + imageUrlRoot + "/images");
+
+                                string imageUrlRoot = (HttpContext.Current.Request.ApplicationPath.EndsWith("/")) ? HttpContext.Current.Request.ApplicationPath : HttpContext.Current.Request.ApplicationPath + "/";
+                                imageUrlRoot += fromUri.MakeRelativeUri(toUri).ToString();
+                                fileContent = fileContent.Replace("url(\"images", "url(\"" + imageUrlRoot + "/images");
                             }
 
                             if (!minify)
