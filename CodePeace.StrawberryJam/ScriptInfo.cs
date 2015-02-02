@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CodePeace.StrawberryJam
 {
+    public class LessInfo : ScriptInfo
+    {}
+
     public class ScriptInfo : IScriptInfo
     {
         public ScriptInfo(string url, string localPath, ScriptType scriptType, string area = null)
